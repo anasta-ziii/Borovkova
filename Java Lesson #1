@@ -1,0 +1,59 @@
+// Задача 1. 
+public class class1 {
+    public static void main(String[] args){
+        System.out.println("Hello " + (args.length >0? args[0]: "world"));
+    }
+}
+
+
+// Задача 2. Написать программу получающую на вход в качестве аргумента несколько параметров. В программе вывести "Вы ввели" + N
+(количество параметров) + "параметров". Если параметры не передвавались, вывести "Вы не передавали параметров".
+public class Main{
+    public static void main(String[] args) {
+        int c = 0;
+        for (int i = 0; i < args.length; i++) {
+            c++;
+        }
+        if (c > 0) {
+            System.out.println("Вы ввели " + c + " параметров");
+        }
+        else {
+            System.out.println("Вы не передавали параметров");
+        }
+    }
+}
+
+// Задача 3. Передавать в качестве параметров два целочисленных числа. Вывести на экран как сами значение, так и их сумму ("3 +
+2 = 5"). Если количество параметров не равно 2, вывести сообщение "Неверное количество параметров".
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (String arg : args) {
+            System.out.println(arg + " ");
+            int k = Integer.parseInt(arg);
+            sum += k;
+        }
+        if (args.length == 2) {
+            System.out.println(args[0]+ " + " + args[1] + " = " + sum);
+        }
+        else {
+            System.out.println("Неверное количество параметров");
+        }
+    }
+}
+
+
+// Задача 4. Ввести в качестве параметров имя пользователя и пароль. Проверить в методе main() соответствие введенных значений
+ заранее определенным значениям. В случае полного соответствия вывести сообщение "Вас узнали. Добро пожаловать",
+ в противном случае вывести сообщение "Логин и пароль не распознаны. Доступ запрещен".
+public class Main {
+    public static void main(String[] args) {
+        String password = "w311";
+        String login = "admin";
+        if ((password.equals(args[1]) && login.equals(args[0])) || ((password.equals(args[0]) && login.equals(args[1])))) {
+            System.out.println("Вас узнали. Добро пожаловать");
+        } else {
+            System.out.println("Логин и пароль не распознаны. Доступ запрещён");
+        }
+    }
+}
